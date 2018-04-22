@@ -83,7 +83,6 @@ while True:
 
     process_this_frame = not process_this_frame
 
-
     # Display the results
     for (top, right, bottom, left), name in zip(face_locations, face_names):
         # Scale back up face locations since the frame we detected in was scaled to 1/4 size
@@ -114,11 +113,11 @@ while True:
         break
 
 # store filename in a variable
-filename = '../finalProject/traceData.json'
+filename = '../final_project/traceData.json'
 
-with open(filename, 'w') as file_obj:
+with open(filename, 'w') as fp:
     """store face_paths to local files"""
-    json.dump(file_obj, face_paths)
+    json.dump(fp, face_paths)
 
 # Release handle to the webcam
 video_capture.release()
