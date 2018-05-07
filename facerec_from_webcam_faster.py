@@ -21,21 +21,21 @@ video_capture = cv2.VideoCapture(0)
 # obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-biden_image = face_recognition.load_image_file("./known_people/weiwei.jpeg")
-biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
+weige_image = face_recognition.load_image_file("./known_people/weige.jpg")
+weige_face_encoding = face_recognition.face_encodings(weige_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-yvshenmde_image = face_recognition.load_image_file("./known_people/weige.jpg")
-yvshenmde_face_encoding = face_recognition.face_encodings(yvshenmde_image)[0]
+daTangZong_image = face_recognition.load_image_file("./known_people/daTangZong.jpg")
+daTangZong_face_encoding = face_recognition.face_encodings(daTangZong_image)[0]
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-    biden_face_encoding,
-    yvshenmde_face_encoding
+    weige_face_encoding,
+    daTangZong_face_encoding
 ]
 known_face_names = [
-    "weiwei",
-    "weige"
+    "weige",
+    "daTangZong"
 ]
 
 # record the face paths, just like:
@@ -115,9 +115,11 @@ while True:
 # store filename in a variable
 filename = '../final_project/traceData.json'
 
+print(face_paths)
+
 with open(filename, 'w') as fp:
     """store face_paths to local files"""
-    json.dump(fp, face_paths)
+    json.dump(face_paths, fp)
 
 # Release handle to the webcam
 video_capture.release()
